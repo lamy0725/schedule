@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/create',[ScheduleController::class, 'create']);
+Route::get('/', [ScheduleController::class, 'schedule']);
+Route::get('/edit', [ScheduleController::class, 'edit']);
+Route::get('/table', [ScheduleController::class, 'table']);
+
